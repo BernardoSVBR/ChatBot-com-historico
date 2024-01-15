@@ -1,0 +1,273 @@
+/*IA*/
+.chat-toggle-button {
+  position: fixed;
+  bottom: 17px;
+  right: 17px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background-color: var(--blue);
+  color: #f7f7f7;
+  border: none;
+  cursor: pointer;
+  z-index: 110;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chat-toggle-button:hover {
+  background-color: #1348f8;
+}
+
+.chatbot .chatbox {
+  overflow-y: auto;
+  height: 510px;
+  padding: 30px 20px 100px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 25px;
+}
+
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+
+.chatbox .chat {
+  display: flex;
+  list-style: none;
+}
+
+.chatbox .outgoing {
+  margin: 20px 0;
+  justify-content: flex-end;
+}
+
+.chatbox .incoming span {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  cursor: default;
+  text-align: center;
+  line-height: 32px;
+  align-self: flex-end;
+  background: #724ae8;
+  border-radius: 4px;
+  margin: 0 10px 7px 0;
+}
+
+.chatbox .chat p {
+  white-space: pre-wrap;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 10px;
+  max-width: 75%;
+  color: #fff;
+  font-size: 0.95rem;
+  background: #724ae8;
+}
+
+.chatbox .incoming p {
+  border-radius: 10px 10px 10px 0;
+}
+
+.chatbox .chat p.error {
+  color: #721c24;
+  background: #f8d7da;
+}
+
+.chatbox .incoming p {
+  color: #000;
+  background: #f2f2f2;
+}
+
+.chatbot .chat-input {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding: 3px 20px;
+  border-top: 1px solid #ddd;
+}
+
+.chat-input textarea {
+  height: 55px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  max-height: 180px;
+  padding: 15px 15px 15px 0;
+  font-size: 0.95rem;
+}
+
+.chat-input span {
+  align-self: flex-end;
+  color: #724ae8;
+  cursor: pointer;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  font-size: 1.35rem;
+}
+
+.chat-input textarea:valid~span {
+  visibility: visible;
+}
+
+#chatIA {
+  /*icon chat*/
+  font-size: 2.3em;
+}
+
+.box-questions {
+  position: fixed;
+  right: 35px;
+  top: 1vh;
+  bottom: 90px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 400px;
+  height: 0px;
+  border-radius: 15px;
+  text-align: center;
+  overflow: hidden;
+  transition: width 0.4s ease, height 0.4s ease, left 0.4s ease;
+  z-index: 100;
+  box-shadow: 0px 20px 27px 0px rgba(0, 0, 0, 0.1);
+}
+
+.show {
+  overflow: hidden;
+  width: 400px;
+  height: 88vh;
+}
+
+.header {
+  background-color: var(--blue);
+  padding: 10px;
+  color: #fffff6;
+  border-radius: 10px 10px 0 0;
+  font: normal 600 1.5em "Poppins", sans-serif;
+  text-align: center;
+}
+
+.footer {
+  background-color: var(--blue);
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+input {
+  width: 70vw;
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin: 10px auto;
+  word-wrap: break-word;
+  font: normal 500 1em "Poppins", sans-serif;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+}
+
+#icon-send {
+  font-size: 2.2em;
+  color: #fffef6;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: 0.4s;
+  background-color: #949494;
+}
+
+#history {
+  padding: 1rem;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+}
+
+.box-my-message {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box-response-message {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.my-message,
+.response-message {
+  padding: 1rem;
+  border-radius: 10px;
+  color: #fff;
+  margin: 0;
+}
+
+.my-message {
+  text-align: right;
+  background-color: #5959ff;
+  font: normal 500 0.9em "Poppins", sans-serif;
+}
+
+.response-message {
+  text-align: left;
+  background-color: #f2f2f2;
+  color: #000;
+  font: normal 500 0.9em "Poppins", sans-serif;
+}
+
+@media (max-width: 490px) {
+  .chatbot-toggler {
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .chatbot {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .chatbot .chatbox {
+    height: 90%;
+    padding: 25px 15px 100px;
+  }
+
+  .chatbot .chat-input {
+    padding: 5px 15px;
+  }
+
+  .chatbot header span {
+    display: block;
+  }
+}
